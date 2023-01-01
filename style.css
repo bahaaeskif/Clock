@@ -1,0 +1,145 @@
+/* global styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(9, 121, 88);
+    background: linear-gradient(90deg, rgba(9, 121, 88, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    font-family: 'Alegreya', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 89vh;
+}
+
+/* global styles */
+
+
+/* Start styling the Clock */
+.clock {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255, 0.8);
+    position: relative;
+}
+
+.clock::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    border-radius: 50%;
+    z-index: 99;
+}
+
+.numbers {
+    --rotation: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    transform: rotate(calc(var(--rotation) * 1deg));
+    font-size: 24px;
+}
+
+.number-1 {
+    --rotation: 30;
+}
+
+.number-2 {
+    --rotation: 60;
+}
+
+.number-3 {
+    --rotation: 90;
+}
+
+.number-4 {
+    --rotation: 120;
+}
+
+.number-5 {
+    --rotation: 150;
+}
+
+.number-6 {
+    --rotation: 180;
+}
+
+.number-7 {
+    --rotation: 210;
+}
+
+.number-8 {
+    --rotation: 240;
+}
+
+.number-9 {
+    --rotation: 270;
+}
+
+.number-10 {
+    --rotation: 300;
+}
+
+.number-11 {
+    --rotation: 330;
+}
+
+.hand {
+    --rotate-ratio: 0;
+    position: absolute;
+    height: 50%;
+    width: 12px;
+    top: 0;
+    left: 50%;
+    background-color: black;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotate-ratio) * 1deg));
+}
+
+.seconds {
+    --rotate-ratio: 0;
+    background-color: red;
+    width: 3px;
+    z-index: 3;
+    height: 48%;
+    top: 2%;
+
+}
+
+.minutes {
+    --rotate-ratio: 0;
+    width: 6px;
+    z-index: 2;
+    height: 40%;
+    top: 10%;
+}
+
+.hours {
+    --rotate-ratio: 0;
+    width: 12px;
+    z-index: 1;
+    height: 30%;
+    top: 20%;
+}
+
+/* End styling the Clock */
+
+/* mobiles responsive */
+@media (max-width:768px) {
+    .clock {
+        width: 250px;
+        height: 250px;
+    }
+
+    .numbers {
+        font-size: 15px;
+    }
+}
